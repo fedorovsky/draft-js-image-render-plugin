@@ -12,7 +12,7 @@ const addImage = (editorState: EditorState, url: string, extraData?: {}) => {
   const newEditorState = AtomicBlockUtils.insertAtomicBlock(
     editorState,
     entityKey,
-    ' ',
+    'i',
   );
   return EditorState.forceSelection(
     newEditorState,

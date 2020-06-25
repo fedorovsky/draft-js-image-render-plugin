@@ -22,6 +22,12 @@ export const imageRenderPlugin = createImageRenderPlugin({
 
 const plugins = [focusPlugin, imageRenderPlugin];
 
+const getCharCount = (editorState: EditorState) => {
+  const plainText = editorState.getCurrentContent().getPlainText('');
+  const cleanString = plainText.trim();
+  return cleanString.length;
+}
+
 const Editor = () => {
   const editorRef = React.useRef<PluginEditor | null>(null);
 
@@ -58,6 +64,7 @@ const Editor = () => {
         />
       </Wrapper>
       <button onClick={handleAddImage}>ADD IMAGE</button>
+      <p>COUNT: {getCharCount(editorState)}</p>
       <div>
         <h3>Result (HTML):</h3>
         <div dangerouslySetInnerHTML={{ __html: html }} />

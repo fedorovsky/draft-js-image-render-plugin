@@ -10,7 +10,7 @@
 ```javascript
 import Editor from 'draft-js-plugins-editor';
 import createImageRenderPlugin from 'draft-js-image-render-plugin';
-
+``
 export const imageRenderPlugin = createImageRenderPlugin();
 
 const plugins = [imageRenderPlugin];
